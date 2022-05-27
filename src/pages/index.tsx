@@ -35,6 +35,7 @@ const Home: NextPage = () => {
 
         <Button
           type='primary'
+          className='mb-4'
           onClick={() =>
             demoPopup.show({
               title: '这是自定义标题',
