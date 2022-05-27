@@ -1,10 +1,15 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
+import { Button } from 'antd'
 import classnames from 'classnames'
+import Counter from '@/features/counter'
+import { usePopupCtl } from '@/features/popup/index.store'
 import styles from '../styles/Home.module.css'
 
 const Home: NextPage = () => {
+  const demoPopup = usePopupCtl('demo')
+
   return (
     <div className={styles.container}>
       <Head>
@@ -15,7 +20,10 @@ const Home: NextPage = () => {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to <a href='https://nextjs.org'>Next.js!</a>
+          Welcome to{' '}
+          <a className=' text-red-500' href='https://nextjs.org'>
+            Next.js!
+          </a>
         </h1>
 
         <p className={styles.description}>
@@ -24,6 +32,20 @@ const Home: NextPage = () => {
             pages/index.tsx
           </code>
         </p>
+
+        <Button
+          type='primary'
+          onClick={() =>
+            demoPopup.show({
+              title: '这是自定义标题',
+              foo: '这是自定义属性，可以传递给弹窗',
+            })
+          }
+        >
+          弹窗
+        </Button>
+
+        <Counter />
 
         <div className={styles.grid}>
           <a href='https://nextjs.org/docs' className={styles.card}>
