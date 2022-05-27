@@ -4,7 +4,7 @@ import Image from 'next/image'
 import classnames from 'classnames'
 import styles from '../styles/Home.module.css'
 
-const a = { };
+const a = {};
 
 const Home: NextPage = () => {
   return (
