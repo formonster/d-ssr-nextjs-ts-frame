@@ -1,3 +1,23 @@
 {
-  "extends": "next/core-web-vitals"
+  "root": true,
+  "extends": [
+    "next/core-web-vitals",
+    "prettier"
+  ],
+  // https://eslint.org/docs/rules
+  "rules": {
+    "semi": [
+      "error",
+      "never"
+    ],
+    "quotes": [
+      "error",
+      "single"
+    ],
+    "array-callback-return": "error",
+    // 禁止使用多个空格
+    "no-multi-spaces": "error",
+    // 禁止出现多行空行
+    "no-multiple-empty-lines": "error"
+  }
 }
